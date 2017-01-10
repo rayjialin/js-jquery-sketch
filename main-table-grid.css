@@ -27,5 +27,5 @@ button{
   width: 100px;
   background-color: white;
   margin: 1px;
-  float: left;
+  /*float: left;*/
 }

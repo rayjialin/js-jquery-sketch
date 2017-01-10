@@ -7,14 +7,24 @@ $(document).ready(function(){
 });
 
 function createBoard(boardSize){
-  $('.grid').remove(); //remove the grid before *to avoid create duplicate grid
+  // $('.grid').reomve();
+  $('.column').remove(); //remove the grid before *to avoid create duplicate grid
   var boardLayout = boardSize * boardSize; //get the area of the board size
 
   var boxes = (400/boardSize) - 2; //get the size of each grid
 
+  //create grid using float: left
   //loop over the board to insert each div (grid) to the container
-  for (var i = 0; i < boardLayout; i++){
-    $('.container').append("<div class='grid' style='height: " + boxes + "px; width: " + boxes + "px;'></div>");
+  // for (var i = 0; i < boardLayout; i++){
+  //   $('.container').append("<div class='grid' style='height: " + boxes + "px; width: " + boxes + "px;'></div>");
+  // }
+
+  //create grid using table
+  for (var i = 0; i < boardSize; i++){
+    $('.table').append("<tr class='column'></tr>");
+  }
+  for (var i = 0; i < boardSize; i++){
+    $('.column').append("<td class='grid' style='height: " + boxes + "px; width: " + boxes + "px;'></td>");
   }
 
   hover(); //hover to fill the grid with color based on the button clicked
